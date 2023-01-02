@@ -96,3 +96,7 @@
     padding: 2rem 0;
   }
 }
+
+.emptyState { width: 100%; max-width: 760px; padding: 2rem; text-align: center; border: 1px solid #d8e2dc; border-radius: 12px; background: #f5f8f6; color: #294a3b; }
+.emptyState h2 { margin-top: 0; font-size: 1.2rem; }
+.emptyState button { margin-top: 1rem; border: 0; border-radius: 6px; padding: .7rem 1rem; background: #245f46; color: white; cursor: pointer; }

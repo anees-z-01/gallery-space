@@ -78,14 +78,21 @@ const Home = () => {
         <input
           id="search"
           className={styles.searchInput}
-          type="text"
+          type="search"
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           placeholder="Try: van gogh, canvas, mona"
         />
 
-        <p className={styles.resultLabel}>{resultLabel}</p>
+        <p className={styles.resultLabel} role="status" aria-live="polite">{resultLabel}</p>
 
+        {!isLoading && !error && artworks.length === 0 ? (
+          <section className={styles.emptyState}>
+            <h2>No artwork matches this search</h2>
+            <p>Try an artist, title, or medium, or return to the full collection.</p>
+            <button type="button" onClick={() => setSearch('')}>Show all artworks</button>
+          </section>
+        ) : null}
         <div className={styles.grid}>
           {artworks.map((artwork) => (
             <article key={artwork.id} className={styles.card}>
